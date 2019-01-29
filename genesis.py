@@ -149,10 +149,10 @@ def generate_hashes_from_block(data_block, algorithm):
     header_hash = sha256_hash
   elif algorithm == 'X11':
     try:
-      exec('import %s' % "xcoin_hash")
+      exec('import %s' % "dash_hash")
     except ImportError:
-      sys.exit("Cannot run X11 algorithm: module xcoin_hash not found")
-    header_hash = xcoin_hash.getPoWHash(data_block)[::-1]
+      sys.exit("Cannot run X11 algorithm: module dash_hash not found")
+    header_hash = dash_hash.getPoWHash(data_block)[::-1]
   elif algorithm == 'X13':
     try:
       exec('import %s' % "x13_hash")
